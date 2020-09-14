@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'GFS Neohellenic Regular';
+    src: url('./assets/fonts/GFSNeohellenic-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'GFS Neohellenic Bold';
+    src: url('./assets/fonts/GFSNeohellenic-Regular.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url('./assets/fonts/Montserrat-Light.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'HelveticaNeue Light';
+    src: url('./assets/fonts/HelveticaNeue-Light.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'HelveticaNeue Medium';
+    src: url('./assets/fonts/HelveticaNeue-Medium.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'HelveticaNeue Bold';
+    src: url('./assets/fonts/HelveticaNeue-Bold.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'CF Note Bold';
+    src: url('./assets/fonts/CF-Note-Bold.ttf')  format('truetype');
+}
+
