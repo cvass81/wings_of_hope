@@ -39,7 +39,7 @@ const FlipClock = () => {
 
   return (
     <Fade in={Boolean(remainingTime)}>
-      <Grid container spacing={1} className={classes.flipClock}>
+      <Grid container spacing={1} className={classes.flipClock} wrap="nowrap">
         {Object.entries(fullDate).map(([timeAsset, value]) => (
           <Grid item key={timeAsset}>
             <FlipUnitContainer label={timeAsset} value={value} />

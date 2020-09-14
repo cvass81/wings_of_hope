@@ -22,7 +22,7 @@ const NavyCamo = () => {
       <Grid item>
         <div className={classes.container}>
           <div className={classes.heading}>
-            <Typography noWrap component="h3" variant="h5">
+            <Typography component="h3" variant="h5">
               This documentary takes us back to...
             </Typography>
           </div>
@@ -50,7 +50,7 @@ const NavyCamo = () => {
       <Grid item>
         <div className={classes.titleOnlyContainer}>
           <div className={classes.heading}>
-            <Typography noWrap component="h3" variant="h5">
+            <Typography component="h3" variant="h5">
               Contact
             </Typography>
           </div>

@@ -43,6 +43,9 @@ const useStyles = makeStyles(theme => ({
   heading: {
     gridArea: 'heading',
     alignSelf: 'end',
+    [theme.breakpoints.up('sm')]: {
+      whiteSpace: 'nowrap',
+    },
   },
   hr: {
     gridArea: 'hr',
