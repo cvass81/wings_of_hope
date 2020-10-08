@@ -11,6 +11,7 @@
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-resize-detector": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -46,5 +47,6 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "prettier": "^2.1.1"
-  }
+  },
+  "homepage": "https://wingsofhope.grafasdiving.gr/"
 }

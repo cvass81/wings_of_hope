@@ -5,9 +5,9 @@ import Button from '@material-ui/core/Button';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MailIcon from '@material-ui/icons/Mail';
+import Trailer from '../trailer';
 import useStyles from './styles';
 import { Arrow } from '../../../../assets/svgs';
-import player from '../../../../assets/images/player.png';
 
 const NavyCamo = () => {
   const classes = useStyles();
@@ -39,11 +39,7 @@ const NavyCamo = () => {
             </Typography>
           </div>
           <div className={classes.thumbnail}>
-            <img
-              className={classes.image}
-              alt="Player Thumbnail"
-              src={player}
-            />
+            <Trailer />
           </div>
         </div>
       </Grid>
@@ -87,7 +83,7 @@ const NavyCamo = () => {
             </Button>
           </Grid>
           <Grid item xs={12} sm={8} md={7}>
-            <form>
+            <form method="post" action="">
               <Grid
                 container
                 alignItems="stretch"
@@ -105,6 +101,7 @@ const NavyCamo = () => {
                 </Grid>
                 <Grid item>
                   <TextareaAutosize
+                    name="message"
                     className={classes.textArea}
                     rowsMin={10}
                     placeholder="Place your text here"

@@ -60,9 +60,6 @@ const useStyles = makeStyles(theme => ({
   thumbnail: {
     gridArea: 'thumbnail',
   },
-  image: {
-    maxWidth: '100%',
-  },
   titleOnlyContainer: {
     display: 'grid',
     gridTemplateAreas: `'hr' 'heading'`,
