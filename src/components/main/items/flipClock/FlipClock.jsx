@@ -25,7 +25,7 @@ const FlipClock = () => {
   }, []);
 
   useEffect(() => {
-    if (!remainingTime) {
+    if (!remainingTime || remainingTime < 0) {
       return undefined;
     }
     Object.keys(fullDate).forEach(timeAsset => {
