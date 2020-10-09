@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -11,6 +12,20 @@ import { Arrow } from '../../../../assets/svgs';
 
 const NavyCamo = () => {
   const classes = useStyles();
+  const [message, setMessage] = useState('');
+  const handleSubmit = () =>
+    axios({
+      method: 'post',
+      url: '/sendmsg',
+      data: { message },
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
   return (
     <Grid
       container
@@ -83,37 +98,31 @@ const NavyCamo = () => {
             </Button>
           </Grid>
           <Grid item xs={12} sm={8} md={7}>
-            <form method="post" action="">
-              <Grid
-                container
-                alignItems="stretch"
-                direction="column"
-                spacing={2}
-              >
-                <Grid item>
-                  <Typography
-                    className={classes.textAreaLabel}
-                    component="div"
-                    variant="h6"
-                  >
-                    Your Mail
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <TextareaAutosize
-                    name="message"
-                    className={classes.textArea}
-                    rowsMin={10}
-                    placeholder="Place your text here"
-                  />
-                </Grid>
-                <Grid item>
-                  <Button size="small" variant="outlined">
-                    Send
-                  </Button>
-                </Grid>
+            <Grid container alignItems="stretch" direction="column" spacing={2}>
+              <Grid item>
+                <Typography
+                  className={classes.textAreaLabel}
+                  component="div"
+                  variant="h6"
+                >
+                  Your Mail
+                </Typography>
               </Grid>
-            </form>
+              <Grid item>
+                <TextareaAutosize
+                  onChange={e => setMessage(e.target.value)}
+                  name="message"
+                  className={classes.textArea}
+                  rowsMin={10}
+                  placeholder="Place your text here"
+                />
+              </Grid>
+              <Grid item>
+                <Button size="small" variant="outlined" onClick={handleSubmit}>
+                  Send
+                </Button>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
