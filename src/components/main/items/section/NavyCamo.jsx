@@ -3,6 +3,7 @@ import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MailIcon from '@material-ui/icons/Mail';
@@ -13,11 +14,12 @@ import { Arrow } from '../../../../assets/svgs';
 const NavyCamo = () => {
   const classes = useStyles();
   const [message, setMessage] = useState('');
+  const [email, setEmail] = useState('');
   const handleSubmit = () =>
     axios({
       method: 'post',
       url: '/sendmsg',
-      data: { message },
+      data: { email, message },
     })
       .then(response => {
         console.log(response);
@@ -100,13 +102,12 @@ const NavyCamo = () => {
           <Grid item xs={12} sm={8} md={7}>
             <Grid container alignItems="stretch" direction="column" spacing={2}>
               <Grid item>
-                <Typography
-                  className={classes.textAreaLabel}
-                  component="div"
-                  variant="h6"
-                >
-                  Your Mail
-                </Typography>
+                <TextField
+                  onChange={e => setEmail(e.target.value)}
+                  name="email"
+                  fullWidth
+                  label="Your Mail"
+                />
               </Grid>
               <Grid item>
                 <TextareaAutosize

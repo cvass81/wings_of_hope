@@ -1,10 +1,12 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Fade from '@material-ui/core/Fade';
+import Typography from '@material-ui/core/Typography';
 import FlipUnitContainer from './FlipUnitContainer';
 import * as C from './constants';
 import * as U from './utils';
 import useStyles from './styles';
+import Trailer from '../trailer';
 
 const reducer = (state, { timeAsset, value }) => ({
   ...state,
@@ -38,15 +40,38 @@ const FlipClock = () => {
   }, [remainingTime]);
 
   return (
-    <Fade in={Boolean(remainingTime)}>
-      <Grid container spacing={1} className={classes.flipClock} wrap="nowrap">
-        {Object.entries(fullDate).map(([timeAsset, value]) => (
-          <Grid item key={timeAsset}>
-            <FlipUnitContainer label={timeAsset} value={value} />
+    <div style={{ position: 'relative' }}>
+      <Fade in={Boolean(remainingTime > 0)}>
+        <div className={classes.flipClockContainer}>
+          <Grid container spacing={2} direction="column" alignItems="center">
+            <Grid item>
+              <Grid
+                container
+                spacing={1}
+                className={classes.flipClock}
+                wrap="nowrap"
+              >
+                {Object.entries(fullDate).map(([timeAsset, value]) => (
+                  <Grid item key={timeAsset}>
+                    <FlipUnitContainer label={timeAsset} value={value} />
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Typography variant="h2" component="p">
+                STAY TUNED
+              </Typography>
+            </Grid>
           </Grid>
-        ))}
-      </Grid>
-    </Fade>
+        </div>
+      </Fade>
+      <Fade in={Boolean(remainingTime < 0)}>
+        <div>
+          <Trailer />
+        </div>
+      </Fade>
+    </div>
   );
 };
 

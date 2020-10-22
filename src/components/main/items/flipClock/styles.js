@@ -165,6 +165,12 @@ const useStyles = makeStyles(theme => {
         transform: 'rotateX(0deg)',
       },
     },
+    flipClockContainer: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+    },
   };
 });
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import YouTube from 'react-youtube';
 import { withResizeDetector } from 'react-resize-detector';
 import CardMedia from '@material-ui/core/CardMedia';
 import useStyles from './styles';
@@ -17,20 +18,28 @@ const Video = ({ width: outerWidthProps, height: outerHeightProps }) => {
     width = outerHeight / 0.5625;
   }
 
+  const opts = {
+    width,
+    height,
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
   return (
     <>
       <div className={classes.measure} />
-      <CardMedia
-        style={{
-          width,
-          height,
-          padding: 12,
-        }}
-        frameBorder="0"
-        component="iframe"
-        title="Trailer"
-        src="https://www.youtube.com/embed/5b4bqCgMUkg?autoplay=1&amp;modestbranding=1&amp;rel=0"
-      />
+      {width && height && (
+        <CardMedia
+          className={classes.video}
+          opts={opts}
+          videoId="5b4bqCgMUkg"
+          frameBorder="0"
+          component={YouTube}
+          title="Trailer"
+          allowFullScreen
+        />
+      )}
     </>
   );
 };

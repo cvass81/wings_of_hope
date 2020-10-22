@@ -60,11 +60,6 @@ const DirtCamo = () => {
         <Grid item>
           <FlipClock />
         </Grid>
-        <Grid item>
-          <Typography variant="h2" component="p">
-            STAY TUNED
-          </Typography>
-        </Grid>
       </Grid>
     </Box>
   );

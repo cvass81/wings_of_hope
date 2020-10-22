@@ -10,6 +10,9 @@ const useStyles = makeStyles({
   videoContainer: {
     maxWidth: 600,
   },
+  video: {
+    padding: 12,
+  },
 });
 
 export default useStyles;

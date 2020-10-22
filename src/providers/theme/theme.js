@@ -98,6 +98,25 @@ const theme = createMuiTheme({
         opacity: 0.5,
       },
     },
+    MuiTextField: {
+      root: {
+        '& label': {
+          fontFamily: ['Montserrat Light'].join(','),
+          color: '#FFFFFF',
+          fontSize: 16,
+          fontWeight: 600,
+        },
+        '& label.Mui-focused': {
+          color: '#FFFFFF',
+        },
+        '& .MuiInput-underline:before': {
+          borderBottomColor: '#FFFFFF',
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: '#FFFFFF',
+        },
+      },
+    },
   },
 });
 
