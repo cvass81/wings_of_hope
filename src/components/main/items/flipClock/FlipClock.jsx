@@ -68,7 +68,7 @@ const FlipClock = () => {
         </div>
       </Fade>
       <Fade in={Boolean(remainingTime < 0)}>
-        <Paper elevation={2} square className={classes.videoContainer}>
+        <Paper elevation={5} square className={classes.videoContainer}>
           <Video />
         </Paper>
       </Fade>

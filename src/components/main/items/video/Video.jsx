@@ -28,7 +28,7 @@ const Video = props => {
       title="Video"
       width={width}
       height={height}
-      src="https://www.youtube.com/embed/iP5BgRFjqKM?autoplay=1&amp;modestbranding=1&amp;rel=0"
+      src="https://www.youtube.com/embed/iP5BgRFjqKM?modestbranding=1&amp;rel=0"
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
