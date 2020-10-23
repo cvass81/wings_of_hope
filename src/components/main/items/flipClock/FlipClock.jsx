@@ -2,11 +2,12 @@ import React, { useEffect, useReducer, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 import FlipUnitContainer from './FlipUnitContainer';
 import * as C from './constants';
 import * as U from './utils';
 import useStyles from './styles';
-import Trailer from '../trailer';
+import Video from '../video';
 
 const reducer = (state, { timeAsset, value }) => ({
   ...state,
@@ -67,9 +68,9 @@ const FlipClock = () => {
         </div>
       </Fade>
       <Fade in={Boolean(remainingTime < 0)}>
-        <div>
-          <Trailer />
-        </div>
+        <Paper elevation={2} square className={classes.videoContainer}>
+          <Video />
+        </Paper>
       </Fade>
     </div>
   );

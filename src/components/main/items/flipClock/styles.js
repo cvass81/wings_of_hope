@@ -171,6 +171,10 @@ const useStyles = makeStyles(theme => {
       left: 0,
       width: '100%',
     },
+    videoContainer: {
+      display: 'flex',
+      backgroundColor: 'transparent',
+    },
   };
 });
 

@@ -4,7 +4,7 @@ import { withResizeDetector } from 'react-resize-detector';
 import CardMedia from '@material-ui/core/CardMedia';
 import useStyles from './styles';
 
-const Video = ({ width: outerWidthProps, height: outerHeightProps }) => {
+const Trailer = ({ width: outerWidthProps, height: outerHeightProps }) => {
   const classes = useStyles();
   const maxWidth = 600;
   const maxHeight = 0.5625 * 600;
@@ -23,6 +23,7 @@ const Video = ({ width: outerWidthProps, height: outerHeightProps }) => {
     height,
     playerVars: {
       autoplay: 1,
+      rel: 0,
     },
   };
 
@@ -44,4 +45,4 @@ const Video = ({ width: outerWidthProps, height: outerHeightProps }) => {
   );
 };
 
-export default withResizeDetector(Video);
+export default withResizeDetector(Trailer);

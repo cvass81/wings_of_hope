@@ -3,7 +3,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Modal from '@material-ui/core/Modal';
 import player from '../../../../assets/images/player.png';
 import useStyles from './styles';
-import Video from './components/video';
+import Video from './components/trailer';
 
 const Trailer = () => {
   const classes = useStyles();
